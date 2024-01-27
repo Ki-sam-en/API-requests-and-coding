@@ -1,0 +1,540 @@
+{
+	"info": {
+		"_postman_id": "bc79450e-b1ac-4393-bace-2a1ec9a31805",
+		"name": "API pravo_gov.ru",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29332411"
+	},
+	"item": [
+		{
+			"name": "request: ЗАПРОС СПИСКА БЛОКОВ ПУБЛИКАЦИИ И ПОД-БЛОКОВ",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "PMAK-65b38ef024b7210001db58a6-8601ef7d3bd26c0d5af8893b9a999e3f05",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pravo_gov_url}}/api/PublicBlocks/?parent",
+					"host": [
+						"{{pravo_gov_url}}"
+					],
+					"path": [
+						"api",
+						"PublicBlocks",
+						""
+					],
+					"query": [
+						{
+							"key": "parent",
+							"value": null,
+							"description": "Код блока, у которого надо получить все дочерние блоки"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request: \"Федеральное Собрание Российской Федерации\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pravo_gov_url}}/api/PublicBlocks?parent=assembly",
+					"host": [
+						"{{pravo_gov_url}}"
+					],
+					"path": [
+						"api",
+						"PublicBlocks"
+					],
+					"query": [
+						{
+							"key": "parent",
+							"value": "assembly"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request: ЗАПРОС СПИСКА КАТЕГОРИЙ ПРИНЯВШИХ ОРГАНОВ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "PMAK-65b38ef024b7210001db58a6-8601ef7d3bd26c0d5af8893b9a999e3f05",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{pravo_gov_url}}/api/Categories?block=Да",
+					"host": [
+						"{{pravo_gov_url}}"
+					],
+					"path": [
+						"api",
+						"Categories"
+					],
+					"query": [
+						{
+							"key": "block",
+							"value": "Да",
+							"description": "Код блока публикации, для которого необходимо отобразить Категории"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request: ЗАПРОС СПИСКА ПРИНЯВШИХ ОРГАНОВ",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "PMAK-65b38ef024b7210001db58a6-8601ef7d3bd26c0d5af8893b9a999e3f05",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pravo_gov_url}}/api/SignatoryAuthorities?block&category",
+					"host": [
+						"{{pravo_gov_url}}"
+					],
+					"path": [
+						"api",
+						"SignatoryAuthorities"
+					],
+					"query": [
+						{
+							"key": "block",
+							"value": null,
+							"description": "Код блока публикации"
+						},
+						{
+							"key": "category",
+							"value": null,
+							"description": "Код Категории ПО"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request: ЗАПРОС СПИСКА ВИДОВ ДОКУМЕНТОВ",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "PMAK-65b38ef024b7210001db58a6-8601ef7d3bd26c0d5af8893b9a999e3f05",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pravo_gov_url}}/api/DocumentTypes?block&category&SignatoryAuthorityId",
+					"host": [
+						"{{pravo_gov_url}}"
+					],
+					"path": [
+						"api",
+						"DocumentTypes"
+					],
+					"query": [
+						{
+							"key": "block",
+							"value": null,
+							"description": "Код блока публикации"
+						},
+						{
+							"key": "category",
+							"value": null,
+							"description": "Код категории ПО"
+						},
+						{
+							"key": "SignatoryAuthorityId",
+							"value": null,
+							"description": "CUID Принявшего органа"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request: ЗАПРОС СПИСКА ДОКУМЕНТОВ (ПОИСК ДОКУМЕНТОВ)",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "PMAK-65b38ef024b7210001db58a6-8601ef7d3bd26c0d5af8893b9a999e3f05",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pravo_gov_url}}/api/Documents?Block&Category&SignatoryAuthorityId&NameNumberSearchType&Number",
+					"host": [
+						"{{pravo_gov_url}}"
+					],
+					"path": [
+						"api",
+						"Documents"
+					],
+					"query": [
+						{
+							"key": "Block",
+							"value": null,
+							"description": "Код блока публикации"
+						},
+						{
+							"key": "Category",
+							"value": null,
+							"description": "Код Категории принимающего органа"
+						},
+						{
+							"key": "SignatoryAuthorityId",
+							"value": null,
+							"description": "GUID Принявшего органа"
+						},
+						{
+							"key": "DocumentTypes",
+							"value": null,
+							"description": "GUID вида документа (можно использовать несколько значений)",
+							"disabled": true
+						},
+						{
+							"key": "EoNumber",
+							"value": null,
+							"description": "Номер электронного опубликования",
+							"disabled": true
+						},
+						{
+							"key": "PeriodType",
+							"value": null,
+							"description": "Фиксированный временной период выборки данных по дате опубликования:\n\n«daily» - выборка НПА, опубликованных Сегодня\n\n«weekly» - выборка за текущую Неделю (с Пн по Вс)\n\n«monthly» - выборка за текущий Месяц\n\n«day» - выборка за определенный день, который указывается в параметре «Date»",
+							"disabled": true
+						},
+						{
+							"key": "Date",
+							"value": null,
+							"description": "Дата опубликования документов, если параметр PeriodType указан как «Day»",
+							"disabled": true
+						},
+						{
+							"key": "DocumentDateFrom",
+							"value": null,
+							"description": "Дата подписания документа – начало периода поиска",
+							"disabled": true
+						},
+						{
+							"key": "DocumentDateTo",
+							"value": null,
+							"description": "Дата подписания документа – конец периода поиска",
+							"disabled": true
+						},
+						{
+							"key": "Name",
+							"value": null,
+							"description": "Составное название документа, включающее вид, дату и номер НПА, а также название принимающего органа",
+							"disabled": true
+						},
+						{
+							"key": "NameNumberSearchType",
+							"value": null,
+							"description": "Режим поиска по номеру НПА, возможны следующие значения:\n\n0 – точно\n\n1 – начинается с\n\n2 – заканчивается на\n\n3 – содержит"
+						},
+						{
+							"key": "Number",
+							"value": null,
+							"description": "Номер документа (НПА) – режим поиска, в соответствии с параметром «NumberSearchType»"
+						},
+						{
+							"key": "JdRegNumber",
+							"value": null,
+							"description": "Номер регистрации в Минюсте",
+							"disabled": true
+						},
+						{
+							"key": "JdRegDateFrom",
+							"value": null,
+							"description": "Дата регистрации в Минюсте – начало периода поиска",
+							"disabled": true
+						},
+						{
+							"key": "JdregDateTo",
+							"value": null,
+							"description": "Дата регистрации в Минюсте– конец периода поиска",
+							"disabled": true
+						},
+						{
+							"key": "PublishDateFrom",
+							"value": null,
+							"description": "Дата публикации НПА – начало периода поиска",
+							"disabled": true
+						},
+						{
+							"key": "PublishDateTo",
+							"value": null,
+							"description": "Дата публикации НПА – конец периода поиска",
+							"disabled": true
+						},
+						{
+							"key": "DocumentText",
+							"value": null,
+							"description": "Текст документа",
+							"disabled": true
+						},
+						{
+							"key": "PageSize",
+							"value": null,
+							"description": "Количество возвращаемых записей на страницу, возможны следующие значения: 10, 30, 100, 200",
+							"disabled": true
+						},
+						{
+							"key": "Index",
+							"value": null,
+							"description": "Номер страницы результатов, которую необходимо отобразить.\n(по умолчанию равно 1)",
+							"disabled": true
+						},
+						{
+							"key": "SortedBy",
+							"value": null,
+							"description": "Параметр, по которому должна выполняться сортировка:\n\n0 – Дата подписания\n\n1 – Вид документа\n\n2 – Принявший орган\n\n3 – Номер документа\n\n4 – Дата опубликования\n\n5 – Номер опубликования",
+							"disabled": true
+						},
+						{
+							"key": "SortDestination",
+							"value": null,
+							"description": "Направление сортировки:  \n\n0 – по возрастанию\n1 – по убыванию",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request: ЗАПРОС ПАРАМЕТРОВ ОТДЕЛЬНОГО ДОКУМЕНТА",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "PMAK-65b38ef024b7210001db58a6-8601ef7d3bd26c0d5af8893b9a999e3f05",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pravo_gov_url}}/api/Document?eoNumber=2600202104190001",
+					"host": [
+						"{{pravo_gov_url}}"
+					],
+					"path": [
+						"api",
+						"Document"
+					],
+					"query": [
+						{
+							"key": "eoNumber",
+							"value": "2600202104190001",
+							"description": "Номер электронного опубликования(обязательный)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request: ЗАПРОС СТАТИСТИКИ ОПУБЛИКОВАНИЯ ДОКУМЕНТОВ",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "PMAK-65b38ef024b7210001db58a6-8601ef7d3bd26c0d5af8893b9a999e3f05",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pravo_gov_url}}/api/BlockStatistics/%20daily ",
+					"host": [
+						"{{pravo_gov_url}}"
+					],
+					"path": [
+						"api",
+						"BlockStatistics",
+						"%20daily "
+					],
+					"query": [
+						{
+							"key": "period",
+							"value": null,
+							"description": "Временной период за который рассчитываются данные.\nВозможные значения: «daily», «weekly», «monthly»",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "PMAK-65b38ef024b7210001db58a6-8601ef7d3bd26c0d5af8893b9a999e3f05",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "X-API-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
